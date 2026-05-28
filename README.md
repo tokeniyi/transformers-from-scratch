@@ -1,69 +1,112 @@
 # Transformers from Scratch
 
-A comprehensive implementation of the Transformer architecture from first principles, built with educational clarity and production-quality code.
+> A complete educational implementation of the Transformer architecture built entirely from first principles using PyTorch.
+
+![Python](https://img.shields.io/badge/Python-3.8+-blue)
+![PyTorch](https://img.shields.io/badge/PyTorch-1.9+-red)
+![Status](https://img.shields.io/badge/Status-Active%20Development-green)
+![License](https://img.shields.io/badge/License-MIT-yellow)
 
 ---
 
 ## Overview
 
-This project provides a ground-up implementation of the Transformer model introduced in the paper *Attention Is All You Need* by Vaswani et al.
+This repository contains a ground-up implementation of the Transformer architecture introduced in the landmark paper:
 
-The goal of this repository is to:
+**“Attention Is All You Need” — Vaswani et al. (2017)**
 
-* Understand how Transformers work internally
-* Rebuild the architecture step-by-step from scratch
-* Provide clean, modular, and reusable implementations
-* Serve as both an educational resource and experimentation playground
+The primary goal of this project is to deeply understand how Transformers work internally by rebuilding every major component manually instead of relying on high-level abstractions.
 
----
+This project focuses on:
 
-## Features
+* Understanding self-attention mathematically and programmatically
+* Recreating encoder-decoder architectures from scratch
+* Building reusable Transformer components
+* Experimenting with modern optimization techniques
+* Providing educational and production-quality implementations
 
-* ✨ Clean and well-documented implementation of Transformer components
-* 🔧 Modular architecture for easy customization and experimentation
-* 📚 Educational focus with detailed comments and explanations
-* 🚀 Production-quality code structure and organization
-* 🧠 Built entirely from first principles without relying on high-level abstractions
+Whether you're learning deep learning, studying NLP systems, or researching Transformer architectures, this repository is designed to serve as both a learning resource and an experimentation playground.
 
 ---
 
-## Project Status
+# Features
 
-🚧 **Currently Under Development**
+* ✨ Clean and highly readable codebase
+* 🧠 Transformer implementation from first principles
+* 🔧 Modular and extensible architecture
+* 📚 Educational comments and explanations throughout the code
+* 🚀 Production-style project structure
+* ⚡ PyTorch-based implementation
+* 🧪 Designed for experimentation and research
+* 📈 Future support for benchmarking and optimization experiments
 
-This project is actively being improved with:
+---
 
-* Additional Transformer variants
+# Current Implementations
+
+The repository currently includes implementations of:
+
+* Multi-Head Self Attention
+* Scaled Dot-Product Attention
+* Positional Encoding
+* Token Embeddings
+* Feed-Forward Networks
+* Residual Connections
+* Layer Normalization
+* Encoder Blocks
+* Decoder Blocks
+* Full Transformer Architecture
+
+---
+
+# Project Status
+
+🚧 **Actively Under Development**
+
+This project is continuously evolving with ongoing improvements, refactoring, experiments, and additional model implementations.
+
+Current development includes:
+
 * Training pipelines
-* Optimization techniques
-* Better documentation and examples
-* Research experiment support
+* Better modularization
+* Optimization experiments
+* Research tooling
+* Improved testing coverage
+* Performance benchmarking
 
 ---
 
-## Getting Started
+# Installation
 
-### Prerequisites
-
-Make sure you have the following installed:
-
-* Python 3.8+
-* PyTorch 1.9+
-* NumPy
-
----
-
-## Installation
+Clone the repository:
 
 ```bash
 git clone https://github.com/tokeniyi/transformers-from-scratch.git
 cd transformers-from-scratch
+```
+
+Install dependencies:
+
+```bash
 pip install -r requirements.txt
 ```
 
 ---
 
-## Quick Start
+# Requirements
+
+* Python 3.8+
+* PyTorch 1.9+
+* NumPy
+
+Optional (recommended):
+
+* CUDA-compatible GPU
+* Jupyter Notebook
+
+---
+
+# Quick Start
 
 Example usage:
 
@@ -82,7 +125,7 @@ model = Transformer(
 print(model)
 ```
 
-Run an example script:
+Run an example training/demo script:
 
 ```bash
 python examples/train_demo.py
@@ -90,55 +133,63 @@ python examples/train_demo.py
 
 ---
 
-## Architecture
-
-The implementation includes:
-
-### Multi-Head Attention
-
-Parallel attention mechanisms that allow the model to focus on different parts of the input sequence simultaneously.
-
-### Feed-Forward Networks
-
-Position-wise fully connected neural networks applied after attention layers.
-
-### Embeddings & Positional Encoding
-
-Token embeddings combined with positional information to preserve sequence order.
-
-### Encoder & Decoder Stacks
-
-Full Transformer encoder and decoder layers with residual connections and layer normalization.
-
----
-
-## Project Structure
+# Project Structure
 
 ```bash
 transformers-from-scratch/
-├── models/               # Core transformer implementations
-├── components/           # Reusable building blocks
-├── examples/             # Usage examples and demos
+│
+├── models/               # Core transformer models
+├── components/           # Reusable transformer building blocks
+├── examples/             # Example scripts and demos
 ├── tests/                # Unit and integration tests
-├── notebooks/            # Experimental notebooks
+├── notebooks/            # Research and experimentation notebooks
+├── utils/                # Helper utilities
 ├── README.md
 └── requirements.txt
 ```
 
 ---
 
-## Learning Goals
+# Transformer Architecture
 
-This repository is designed to help developers:
+The implementation follows the original Transformer encoder-decoder architecture.
 
-* Understand self-attention mathematically and practically
-* Learn how encoder-decoder architectures work
-* Explore sequence modeling and NLP fundamentals
-* Experiment with Transformer modifications and optimizations
+## Multi-Head Attention
+
+Allows the model to attend to different parts of the sequence simultaneously using parallel attention heads.
+
+## Feed Forward Networks
+
+Position-wise fully connected neural networks applied independently to each token representation.
+
+## Positional Encoding
+
+Injects sequence-order information into token embeddings since Transformers lack recurrence.
+
+## Residual Connections & Layer Normalization
+
+Improves gradient flow, stabilizes training, and enables deeper architectures.
+
+## Encoder & Decoder Stacks
+
+Full stacked Transformer blocks implementing attention, normalization, and feed-forward operations.
 
 ---
 
-## Roadmap
+# Learning Objectives
+
+This repository is designed to help developers:
+
+* Understand how self-attention works internally
+* Learn the mathematics behind Transformers
+* Build deep learning architectures from scratch
+* Explore NLP sequence modeling
+* Experiment with Transformer optimizations
+* Gain practical PyTorch experience
+
+---
+
+# Roadmap
 
 Planned additions include:
 
@@ -147,28 +198,56 @@ Planned additions include:
 * [ ] GPT-style autoregressive models
 * [ ] BERT-style encoder models
 * [ ] Flash Attention experiments
+* [ ] KV Cache implementation
 * [ ] Mixed precision training
-* [ ] Model benchmarking
-* [ ] Visualization tools for attention maps
+* [ ] Attention visualization tools
+* [ ] Distributed training support
+* [ ] Model benchmarking suite
+* [ ] Tokenizer implementations
+* [ ] Inference optimization
 
 ---
 
-## Contributing
+# Future Goals
 
-Contributions are welcome!
+Long-term goals for this project include:
+
+* Reimplementing modern Transformer variants
+* Building efficient inference systems
+* Exploring scaling laws
+* Experimenting with memory-efficient attention
+* Implementing research papers from scratch
+* Creating educational deep learning resources
+
+---
+
+# Contributing
+
+Contributions are welcome and greatly appreciated.
 
 If you'd like to contribute:
 
 1. Fork the repository
-2. Create a new branch
+2. Create a feature branch
 3. Make your changes
-4. Submit a pull request
+4. Commit your updates
+5. Submit a pull request
 
-Bug reports, suggestions, and discussions are also appreciated.
+Bug reports, suggestions, discussions, and improvements are all encouraged.
 
 ---
 
-## License
+# References
+
+* *Attention Is All You Need* — Vaswani et al., 2017
+* *The Illustrated Transformer* — Jay Alammar
+* PyTorch Documentation
+* Stanford CS224N
+* Hugging Face Transformers Documentation
+
+---
+
+# License
 
 This project is licensed under the MIT License.
 
@@ -178,27 +257,35 @@ MIT License
 
 ---
 
-## References
+# Author
 
-* *Attention Is All You Need* — Vaswani et al., 2017
-* *The Illustrated Transformer* — Jay Alammar
-* PyTorch Documentation
+Developed and maintained by **Okeniyi Treasure Olubori**
 
----
+### GitHub
 
-## Author
+https://github.com/tokeniyi
 
-Developed by Okeniyi Treasure Olubori.
+I actively work on AI engineering, machine learning systems, and software engineering projects focused on building practical and educational technologies.
 
-* GitHub: https://github.com/tokeniyi
+Some repositories are still actively being developed locally and may not yet be publicly available.
 
 ---
 
-## Contact
+# Support & Feedback
 
-Questions, suggestions, or feedback?
+If you find this project useful:
 
-Feel free to:
+* ⭐ Star the repository
+* 🍴 Fork the project
+* 🐛 Report issues
+* 💡 Suggest improvements
+* 🤝 Contribute to development
+
+---
+
+# Contact
+
+For questions, collaborations, or discussions:
 
 * Open an issue
 * Submit a pull request
@@ -206,5 +293,5 @@ Feel free to:
 
 ---
 
-**Last Updated:** May 2026
-**Status:** Active Development
+*Last Updated: May 2026*
+*Status: Active Development*
